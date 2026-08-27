@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground-rgb: 26, 26, 31;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 250, 248, 245;
+  }
+
+  * {
+    @apply border-charcoal-100;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply text-charcoal-900 bg-white antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight text-charcoal-950;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ::selection {
+    @apply bg-accent-200/60 text-charcoal-950;
+  }
+}
+
+/* Dark mode autofill background override for inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  caret-color: #f1f5f9 !important;
+  box-shadow: 0 0 0 1000px #0f172a inset !important;
+  transition: background-color 99999s ease-in-out 0s !important;
+}
+
+.admin-dark-input {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+  color-scheme: dark !important;
+}
+
+/* Force dark dropdown menu background & light text for select options */
+select option {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 py-3.5
+           bg-charcoal-950 text-white text-sm font-medium tracking-wide
+           rounded-full
+           transition-all duration-300 ease-premium
+           hover:bg-charcoal-800 hover:shadow-soft-md hover:scale-[1.02]
+           active:scale-[0.98]
+           focus:outline-none focus:ring-2 focus:ring-charcoal-950 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-7 py-3.5
+           bg-white text-charcoal-900 text-sm font-medium tracking-wide
+           rounded-full border border-charcoal-200
+           transition-all duration-300 ease-premium
+           hover:bg-charcoal-50 hover:border-charcoal-300 hover:shadow-soft hover:scale-[1.02]
+           active:scale-[0.98]
+           focus:outline-none focus:ring-2 focus:ring-charcoal-200 focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-7 py-3.5
+           bg-accent-600 text-white text-sm font-medium tracking-wide
+           rounded-full
+           transition-all duration-300 ease-premium
+           hover:bg-accent-700 hover:shadow-soft-md hover:scale-[1.02]
+           active:scale-[0.98]
+           focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .section-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-600 mb-3 block;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-semibold text-charcoal-950 tracking-tight leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-charcoal-400 text-base mt-3 leading-relaxed;
+  }
+
+  .input-field {
+    @apply w-full px-5 py-3.5
+           border border-charcoal-200 rounded-xl
+           text-sm text-charcoal-900 placeholder-charcoal-300
+           bg-white
+           transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-accent-400/40 focus:border-accent-400
+           hover:border-charcoal-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-charcoal-100
+           overflow-hidden
+           transition-all duration-500 ease-premium
+           hover:shadow-soft-md hover:-translate-y-0.5;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide;
+  }
+
+  .badge-new {
+    @apply badge bg-accent-100 text-accent-700;
+  }
+
+  .badge-sale {
+    @apply badge bg-red-50 text-red-600;
+  }
+
+  .badge-bestseller {
+    @apply badge bg-warm-100 text-warm-600;
+  }
+
+  .form-input {
+    @apply w-full px-5 py-3 border border-charcoal-200 rounded-xl text-sm text-charcoal-900
+           focus:outline-none focus:ring-2 focus:ring-accent-400/40 focus:border-accent-400
+           transition-all duration-300
+           hover:border-charcoal-300;
+  }
+
+  .nav-link {
+    @apply relative text-[13px] font-medium tracking-wide text-charcoal-500
+           transition-colors duration-300
+           hover:text-charcoal-950;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute -bottom-1 left-0 w-0 h-[1.5px] bg-charcoal-950
+           transition-all duration-300 ease-premium;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-charcoal-950;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes shimmer-flow {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-gradient {
+  background: linear-gradient(
+    90deg,
+    #7c3aed 0%,
+    #a855f7 20%,
+    #e879f9 40%,
+    #818cf8 60%,
+    #a78bfa 80%,
+    #7c3aed 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-flow 5s linear infinite;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal-200 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-charcoal-300;
+}
