@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" fill="none">
+  <!-- Rocket DBBL Triangle Icon -->
+  <g transform="translate(15, 8)">
+    <path d="M 45 8 L 82 80 H 8 L 45 8 Z" fill="#8C3494" />
+    <path d="M 45 20 L 68 70 H 22 L 45 20 Z" fill="#FFFFFF" />
+    <path d="M 45 28 L 56 52 H 34 L 45 28 Z" fill="#8C3494" />
+    <circle cx="45" cy="62" r="4.5" fill="#8C3494" />
+  </g>
+  <!-- Rocket Typography -->
+  <text x="110" y="66" font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" font-weight="900" font-size="42" fill="#8C3494" letter-spacing="-1.5">Rocket</text>
+</svg>
