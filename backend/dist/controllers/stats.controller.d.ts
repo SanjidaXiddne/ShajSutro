@@ -1,0 +1,2 @@
+export declare const getHeroStats: import("express").RequestHandler<import("express-serve-static-core").ParamsDictionary, any, any, import("qs").ParsedQs, Record<string, any>>;
+//# sourceMappingURL=stats.controller.d.ts.map
